@@ -3,11 +3,19 @@ services:
     name: linkedin-backend
     env: java
     plan: free
-    buildCommand: ./gradlew build -x test
+    buildCommand: ./gradlew clean build -x test --no-daemon
     startCommand: java -jar build/libs/*.jar
+    autoDeploy: true
     envVars:
       - key: JAVA_VERSION
         value: 21
-      - key: PORT
-        value: 8080
-
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_USERNAME
+        sync: false
+      - key: DATABASE_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        sync: false

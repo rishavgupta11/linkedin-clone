@@ -1,17 +1,17 @@
-# Use official Eclipse Temurin JDK (Java 21)
-FROM eclipse-temurin:21-jdk
+# -------- Stage 1: Build --------
+FROM gradle:8.10-jdk21-alpine AS builder
+WORKDIR /app
+COPY build.gradle settings.gradle ./
+COPY gradle gradle
+COPY src src
+RUN gradle clean build -x test --no-daemon
 
-# Set working directory inside the container
+# -------- Stage 2: Runtime --------
+FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
-# Copy Gradle files and source code
-COPY . .
+# Copy only the final JAR
+COPY --from=builder /app/build/libs/*.jar app.jar
 
-# Build your Spring Boot project
-RUN ./gradlew build -x test
-
-# Expose the Spring Boot port
 EXPOSE 8080
-
-# Run the application JAR
-CMD ["java", "-jar", "build/libs/Linkedin-Clone-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/app/app.jar"]
