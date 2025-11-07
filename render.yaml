@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: linkedin-backend
+    env: java
+    plan: free
+    buildCommand: ./gradlew build -x test
+    startCommand: java -jar build/libs/*.jar
+    envVars:
+      - key: JAVA_VERSION
+        value: 21
+      - key: PORT
+        value: 8080
