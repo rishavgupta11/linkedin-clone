@@ -1,0 +1,193 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f2ef;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 350px;
+  margin: 60px auto;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+input, textarea {
+  width: 90%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #0073b1;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005f8c;
+}
+
+nav {
+  background: #0073b1;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#posts {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.post {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post .meta {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.post-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.post-actions button {
+  background: #eee;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.post-actions button:hover {
+  background: #0073b1;
+  color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  margin: 10% auto;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ==============================================
+   🌐 Responsive Design (for Mobile & Tablets)
+   ============================================== */
+
+/* Mobile devices (up to 600px width) */
+@media (max-width: 600px) {
+
+  body {
+    background-color: #f3f2ef;
+    padding: 0 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+  }
+
+  nav button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  .container {
+    width: 100%;
+    margin: 30px auto;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  input, textarea {
+    width: 100%;
+  }
+
+  #posts {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .post {
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 8px;
+    padding: 12px;
+  }
+
+  .post-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .modal-content {
+    width: 90%;
+    margin: 40% auto;
+  }
+
+  #create-post textarea {
+    font-size: 14px;
+    height: 80px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Tablets (600px to 900px width) */
+@media (min-width: 600px) and (max-width: 900px) {
+  .container {
+    width: 80%;
+  }
+
+  #posts {
+    max-width: 500px;
+  }
+
+  .modal-content {
+    width: 70%;
+  }
+}
+

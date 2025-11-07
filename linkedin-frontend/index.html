@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Clone - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container auth">
+    <h2>LinkedIn Clone</h2>
+
+    <div id="message"></div>
+
+    <div id="auth-forms">
+        <div id="login-form">
+            <h3>Login</h3>
+            <input type="email" id="loginEmail" placeholder="Email" />
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div id="signup-form">
+            <h3>Signup</h3>
+            <input type="text" id="signupName" placeholder="Name" />
+            <input type="email" id="signupEmail" placeholder="Email" />
+            <input type="password" id="signupPassword" placeholder="Password" />
+            <button onclick="signup()">Signup</button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

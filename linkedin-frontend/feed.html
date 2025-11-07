@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Clone - Feed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <h2>LinkedIn Clone</h2>
+    <div id="user-info">
+    </div>
+    <button onclick="openProfile()">Profile</button>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+<main>
+    <section id="create-post">
+        <textarea id="postContent" placeholder="What's on your mind?"></textarea>
+        <button onclick="createPost()">Post</button>
+    </section>
+
+    <section id="posts"></section>
+
+    <!-- Comment modal -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCommentModal()">&times;</span>
+            <h3>Add Comment</h3>
+            <textarea id="commentContent" placeholder="Write your comment..."></textarea>
+            <button onclick="submitComment()">Submit</button>
+            <div id="commentList"></div>
+        </div>
+    </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
