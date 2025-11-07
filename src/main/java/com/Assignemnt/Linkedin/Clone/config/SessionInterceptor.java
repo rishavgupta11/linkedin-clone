@@ -17,6 +17,11 @@ public class SessionInterceptor implements HandlerInterceptor {
         String uri = request.getRequestURI();
         String method = request.getMethod();
 
+        // ✅ Allow health checks and home route
+        if (uri.startsWith("/actuator") || "/".equals(uri)) {
+            return true;
+        }
+
         // Allow CORS preflight requests
         if ("OPTIONS".equalsIgnoreCase(method)) {
             return true;
