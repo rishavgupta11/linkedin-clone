@@ -121,7 +121,7 @@ public class PostController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deletePost(@PathVariable Long id, HttpSession session) {
-        //  Check authentication
+        //  authentication
         Object emailObj = session.getAttribute("USER_EMAIL");
         if (emailObj == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
@@ -137,7 +137,7 @@ public class PostController {
                     .body(Map.of("error", "Post not found"));
         }
 
-        //  Ensure user owns the post
+        //  user owns the post
         if (!post.getUser().getEmail().equals(email)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN)
                     .body(Map.of("error", "You can delete only your posts"));

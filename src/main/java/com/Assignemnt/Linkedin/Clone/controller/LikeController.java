@@ -18,7 +18,7 @@ public class LikeController {
     private final PostRepository postRepo;
     private final UserRepository userRepo;
 
-    // ✅ Toggle Like (Like or Unlike)
+    // Toggle Like (Like or Unlike)
     @PostMapping("/{postId}")
     public ResponseEntity<?> toggleLike(@PathVariable Long postId, HttpSession session) {
         Object emailObj = session.getAttribute("USER_EMAIL");
@@ -48,7 +48,7 @@ public class LikeController {
         }
     }
 
-    // ✅ Get likes count for a post
+    // Get likes count for a post
     @GetMapping("/{postId}/count")
     public ResponseEntity<?> countLikes(@PathVariable Long postId) {
         Post post = postRepo.findById(postId).orElseThrow();
