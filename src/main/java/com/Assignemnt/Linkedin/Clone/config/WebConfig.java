@@ -21,13 +21,12 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
                 .allowedOriginPatterns(
-                        "https://your-frontend.vercel.app",  // production frontend
-                        "https://*.vercel.app",              // (optional) preview builds
-                        "http://localhost:*"                 // local dev
+                        "https://linkedin-frontend-ft7m85kxq-java-project.vercel.app", // your live Vercel site
+                        "https://*.vercel.app",                 // optional preview builds
+                        "http://localhost:*"                    // local dev
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
     }
-
 }
