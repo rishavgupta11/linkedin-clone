@@ -1,5 +1,5 @@
 // ===== Base API URL =====
-const API = "http://localhost:8080/api";
+const API = "https://linkedin-backend-5k8n.onrender.com/api";
 
 // ================= AUTH SECTION =================
 
